@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using ResumeApi.Model;
-using ResumeApi.RepositoryInterfaces;
-
-namespace ResumeApi.Controllers
+﻿namespace ResumeApi.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using ResumeApi.Model;
+    using ResumeApi.RepositoryInterfaces;
+
     [Route("api/[controller]")]
     public class ResumeController : Controller
     {
@@ -15,7 +11,7 @@ namespace ResumeApi.Controllers
 
         public ResumeController(IResumeRepository resumeRepository)
         {
-            this._resumeRepository = resumeRepository;
+            _resumeRepository = resumeRepository;
         }
 
         // GET api/resume/dfcook

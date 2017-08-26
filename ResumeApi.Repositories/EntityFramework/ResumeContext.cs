@@ -27,6 +27,9 @@
             modelBuilder.Entity<Education>()
                 .ToTable("education");
 
+            modelBuilder.Entity<Experience>()
+                .ToTable("experience");
+
             base.OnModelCreating(modelBuilder);
         }
     }

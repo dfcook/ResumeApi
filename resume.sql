@@ -145,3 +145,40 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.education
     OWNER to postgres;
+
+-- Table: public.experience
+
+-- DROP TABLE public.experience;
+
+CREATE SEQUENCE public.experience_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.experience_id_seq
+    OWNER TO postgres;
+
+CREATE TABLE public.experience
+(
+    id integer NOT NULL DEFAULT nextval('experience_id_seq'::regclass),
+    resume_id integer NOT NULL,
+    from_date date NOT NULL,
+    to_date date,
+    role character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    company_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    location character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT experience_pkey PRIMARY KEY (id),
+    CONSTRAINT fk_experience FOREIGN KEY (resume_id)
+        REFERENCES public.resume (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.experience
+    OWNER to postgres;

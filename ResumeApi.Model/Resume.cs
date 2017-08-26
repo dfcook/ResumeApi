@@ -35,5 +35,7 @@
         public ICollection<IndustryKnowledge> IndustryKnowledge { get; set; }
 
         public ICollection<Education> EducationHistory { get; set; }
+
+        public ICollection<Experience> CareerExperience { get; set; }
     }
 }

@@ -21,6 +21,7 @@
             return _context.Resumes
                 .Include(r => r.KeySkills)
                 .Include(r => r.IndustryKnowledge)
+                .Include(r => r.CareerExperience)
                 .Include(r => r.EducationHistory)
                 .SingleOrDefault(r => r.UserName.Equals(userName, StringComparison.OrdinalIgnoreCase));
         }

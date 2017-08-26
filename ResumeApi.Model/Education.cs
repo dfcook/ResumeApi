@@ -17,7 +17,7 @@
         public int FromYear { get; set; }
 
         [Column("to_year")]
-        public int ToYear { get; set; }
+        public int? ToYear { get; set; }
 
         [Column("establishment")]
         [MaxLength(200)]
