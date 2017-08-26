@@ -182,3 +182,73 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.experience
     OWNER to postgres;
+
+-- data
+
+INSERT INTO public.resume(
+	user_name, first_name, last_name, company_name, summary)
+	VALUES ('dfcook', 'Daniel', 'Cook', 'Dota IT Services Ltd', 'A senior developer with 20 years'' experience including 16 years in .NET development for both the desktop and the Web. Familiar with both server and client-side paradigms including practical experience in modern JavaScript frameworks. Experienced in object-oriented and functional design and patterns. Strong SQL skills including query performance analysis.');
+
+INSERT INTO public.key_skill(
+	resume_id, description)
+	VALUES (1, 'C#, VB.NET, .NET Framework');
+    
+INSERT INTO public.key_skill(
+	resume_id, description)    
+    VALUES (1, 'System Analysis and Design, including application of functional and OO patterns');
+    
+INSERT INTO public.key_skill(
+	resume_id, description)    
+    VALUES (1, 'ASP.NET MVC & Web API');
+    
+INSERT INTO public.key_skill(
+	resume_id, description)    
+    VALUES (1, 'JavaScript (ES5/6), Typescript, Coffeescript');
+    
+INSERT INTO public.key_skill(
+	resume_id, description)    
+    VALUES (1, 'VueJS/Angular/React/Knockout');
+    
+INSERT INTO public.key_skill(
+	resume_id, description)    
+    VALUES (1, 'Webpack/NPM/Node');
+    
+INSERT INTO public.key_skill(
+	resume_id, description)    
+    VALUES (1, 'Silverlight (MVVM, Prism)');
+    
+INSERT INTO public.key_skill(
+	resume_id, description)    
+    VALUES (1, 'WCF/Remoting');
+    
+INSERT INTO public.key_skill(
+	resume_id, description)    
+    VALUES (1, 'HTML5, CSS');
+    
+INSERT INTO public.key_skill(
+	resume_id, description)    
+    VALUES (1, 'SQL Server – Stored Procedures, Views, Triggers, Performance tuning');
+
+INSERT INTO public.industry_knowledge(
+	resume_id, description)    
+    VALUES (1, 'Investment Banking – Convertible Bond pricing, trading and research systems.  Trading FOBO, reconciliation and exception workflow management');
+
+INSERT INTO public.industry_knowledge(
+	resume_id, description)    
+    VALUES (1, 'Financial Services - Home Insurance\Loans');    
+
+INSERT INTO public.industry_knowledge(
+	resume_id, description)    
+    VALUES (1, 'Retail');    
+
+INSERT INTO public.industry_knowledge(
+	resume_id, description)    
+    VALUES (1, 'Mail');        
+
+INSERT INTO public.education(
+	resume_id, from_year, to_year, establishment, qualifications)    
+    VALUES (1, 1986, 1993, 'Kirkham Grammar School', '4 A-Levels and 9 GCSE''s');
+
+INSERT INTO public.education(
+	resume_id, from_year, to_year, establishment, qualifications)    
+    VALUES (1, 1993, 1996, 'Kirkham Grammar School', 'Degree (2:1) in English Literature / Philosophy');
