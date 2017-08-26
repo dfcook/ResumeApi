@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeApi", "ResumeApi\ResumeApi.csproj", "{1270451D-FAE1-4270-AB99-3CDBE07E2FCA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeApi.Web", "ResumeApi.Web\ResumeApi.Web.csproj", "{1270451D-FAE1-4270-AB99-3CDBE07E2FCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeApi.Model", "ResumeApi.Model\ResumeApi.Model.csproj", "{A277E574-29DF-402A-B1FF-F1BD1F0EC35B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeApi.RepositoryInterfaces", "ResumeApi.RepositoryInterfaces\ResumeApi.RepositoryInterfaces.csproj", "{F3C3FE1C-4910-456A-A0EB-884DD0FCB5FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeApi.Repositories", "ResumeApi.Repositories\ResumeApi.Repositories.csproj", "{924506D5-0DF0-4631-AA5E-74C383652CBE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "DatabaseScripts", "{9A6D3BC3-4C7E-4A71-A3D5-4DD643F83F78}"
+	ProjectSection(SolutionItems) = preProject
+		resume.sql = resume.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +26,18 @@ Global
 		{1270451D-FAE1-4270-AB99-3CDBE07E2FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1270451D-FAE1-4270-AB99-3CDBE07E2FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1270451D-FAE1-4270-AB99-3CDBE07E2FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A277E574-29DF-402A-B1FF-F1BD1F0EC35B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A277E574-29DF-402A-B1FF-F1BD1F0EC35B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A277E574-29DF-402A-B1FF-F1BD1F0EC35B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A277E574-29DF-402A-B1FF-F1BD1F0EC35B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3C3FE1C-4910-456A-A0EB-884DD0FCB5FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3C3FE1C-4910-456A-A0EB-884DD0FCB5FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3C3FE1C-4910-456A-A0EB-884DD0FCB5FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3C3FE1C-4910-456A-A0EB-884DD0FCB5FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{924506D5-0DF0-4631-AA5E-74C383652CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{924506D5-0DF0-4631-AA5E-74C383652CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{924506D5-0DF0-4631-AA5E-74C383652CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{924506D5-0DF0-4631-AA5E-74C383652CBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
