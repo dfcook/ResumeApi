@@ -2,6 +2,8 @@
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Cors.Internal;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -27,7 +29,22 @@
             services.AddDbContext<ResumeContext>(options =>
                 options.UseNpgsql(sqlConnectionString));
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("ResumePolicy", builder =>
+                {
+                    builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                });
+            });
+
             services.AddMvc();
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new CorsAuthorizationFilterFactory("ResumePolicy"));
+            });
         }
 
         public void ConfigureContainer(Registry registry)

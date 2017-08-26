@@ -1,5 +1,6 @@
 ﻿namespace ResumeApi.Controllers
 {
+    using Microsoft.AspNetCore.Cors;
     using Microsoft.AspNetCore.Mvc;
     using ResumeApi.Model;
     using ResumeApi.RepositoryInterfaces;
