@@ -47,7 +47,7 @@
         {
             if (_hasValue)
                 return _value;
-
+            
             return ifNone();
         }
 
@@ -69,7 +69,7 @@
             return default(U);
         }
 
-        public void Map(Action<T> some = null, Action none = null)
+        public void Do(Action<T> some = null, Action none = null)
         {
             if (_hasValue)
             {
