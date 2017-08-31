@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ResumeApi.Model
+﻿namespace ResumeApi.Common
 {
+    using System;    
+    using System.Threading.Tasks;
+
     public static class Maybe
     {
         public static Maybe<T> ToMaybe<T>(this T value) where T : class
@@ -45,7 +43,15 @@ namespace ResumeApi.Model
             _hasValue = true;
         }
 
-        public U Match<U>(Func<T, U> some = null, Func<U> none = null)
+        public T OrElse(Func<T> ifNone)
+        {
+            if (_hasValue)
+                return _value;
+
+            return ifNone();
+        }
+
+        public U Map<U>(Func<T, U> some = null, Func<U> none = null)
         {
             if (_hasValue)
             {
@@ -63,7 +69,7 @@ namespace ResumeApi.Model
             return default(U);
         }
 
-        public void Match(Action<T> some = null, Action none = null)
+        public void Map(Action<T> some = null, Action none = null)
         {
             if (_hasValue)
             {

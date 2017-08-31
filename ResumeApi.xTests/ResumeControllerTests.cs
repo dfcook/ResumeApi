@@ -2,6 +2,7 @@ namespace ResumeApi.xTests
 {
     using Microsoft.AspNetCore.Mvc;    
     using Moq;
+    using ResumeApi.Common;
     using ResumeApi.Model;
     using ResumeApi.RepositoryInterfaces;
     using ResumeApi.Web.Controllers;

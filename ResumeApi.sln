@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "Database
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeApi.xTests", "ResumeApi.xTests\ResumeApi.xTests.csproj", "{C215ACB8-C23B-4A1F-A0D0-788D58977F45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeApi.Common", "ResumeApi.Common\ResumeApi.Common.csproj", "{4890D65C-AD52-47E9-82CC-14DD812D9A9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{C215ACB8-C23B-4A1F-A0D0-788D58977F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C215ACB8-C23B-4A1F-A0D0-788D58977F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C215ACB8-C23B-4A1F-A0D0-788D58977F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4890D65C-AD52-47E9-82CC-14DD812D9A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4890D65C-AD52-47E9-82CC-14DD812D9A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4890D65C-AD52-47E9-82CC-14DD812D9A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4890D65C-AD52-47E9-82CC-14DD812D9A9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,6 +6,7 @@
     using ResumeApi.Repositories.EntityFramework;
     using ResumeApi.RepositoryInterfaces;
     using System.Threading.Tasks;
+    using ResumeApi.Common;
 
     public class ResumeRepository : IResumeRepository
     {

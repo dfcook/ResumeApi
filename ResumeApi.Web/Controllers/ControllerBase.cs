@@ -1,11 +1,11 @@
 ﻿namespace ResumeApi.Web.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
-    using ResumeApi.Model;    
+    using ResumeApi.Common;
 
     public class ControllerBase : Controller
     {
         protected virtual IActionResult SomeOrNotFound<T>(Maybe<T> someOrNone) =>
-            someOrNone.Match(some => (IActionResult)Ok(some), () => NotFound());        
+            someOrNone.Map(some => (IActionResult)Ok(some), () => NotFound());        
     }
 }
