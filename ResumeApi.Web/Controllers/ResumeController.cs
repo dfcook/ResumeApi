@@ -1,12 +1,11 @@
-﻿namespace ResumeApi.Controllers
-{
-    using Microsoft.AspNetCore.Cors;
-    using Microsoft.AspNetCore.Mvc;
-    using ResumeApi.Model;
+﻿namespace ResumeApi.Web.Controllers
+{    
+    using Microsoft.AspNetCore.Mvc;    
     using ResumeApi.RepositoryInterfaces;
+    using System.Threading.Tasks;
 
     [Route("api/[controller]")]
-    public class ResumeController : Controller
+    public class ResumeController : ControllerBase
     {
         private readonly IResumeRepository _resumeRepository;
 
@@ -17,9 +16,10 @@
 
         // GET api/resume/dfcook
         [HttpGet("{userName}")]
-        public Resume Get(string userName)
+        public async Task<IActionResult> Get(string userName)
         {
-            return _resumeRepository.GetResumeByUserName(userName);
-        }
+            var resume = await _resumeRepository.GetResumeByUserNameAsync(userName);
+            return SomeOrNotFound(resume);
+        }            
     }
 }

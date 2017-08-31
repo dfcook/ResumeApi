@@ -1,9 +1,10 @@
 ﻿namespace ResumeApi.RepositoryInterfaces
 {
     using ResumeApi.Model;
+    using System.Threading.Tasks;
 
     public interface IResumeRepository
     {
-        Resume GetResumeByUserName(string userName);
+        Task<Maybe<Resume>> GetResumeByUserNameAsync(string userName);
     }
 }

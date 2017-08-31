@@ -1,11 +1,11 @@
 ﻿namespace ResumeApi.Repositories
 {
-    using System;
-    using System.Linq;
+    using System;    
     using Microsoft.EntityFrameworkCore;
     using ResumeApi.Model;
     using ResumeApi.Repositories.EntityFramework;
     using ResumeApi.RepositoryInterfaces;
+    using System.Threading.Tasks;
 
     public class ResumeRepository : IResumeRepository
     {
@@ -16,14 +16,15 @@
             _context = context;
         }
 
-        public Resume GetResumeByUserName(string userName)
+        public Task<Maybe<Resume>> GetResumeByUserNameAsync(string userName)
         {
             return _context.Resumes
                 .Include(r => r.KeySkills)
                 .Include(r => r.IndustryKnowledge)
                 .Include(r => r.CareerExperience)
                 .Include(r => r.EducationHistory)
-                .SingleOrDefault(r => r.UserName.Equals(userName, StringComparison.OrdinalIgnoreCase));
+                .SingleOrDefaultAsync(r => r.UserName.Equals(userName, StringComparison.OrdinalIgnoreCase))
+                .ContinueWith(resume => resume.Result.ToMaybe());
         }
     }
 }

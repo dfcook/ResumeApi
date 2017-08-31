@@ -15,6 +15,8 @@
         {
             modelBuilder.HasDefaultSchema("public");
 
+
+
             modelBuilder.Entity<Resume>()
                 .ToTable("resume");
 
