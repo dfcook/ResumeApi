@@ -5,12 +5,11 @@
     using Newtonsoft.Json;
 
     public class Education
-    {
-        [Key]
+    {        
         [Column("id")]
         public int Id { get; set; }
 
-        [Column("resume_id")]
+        [Column("resume_id")]        
         public int ResumeId { get; set; }
 
         [Column("from_year")]

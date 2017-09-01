@@ -1,6 +1,5 @@
 ﻿namespace ResumeApi.Repositories
-{
-    using System;    
+{    
     using Microsoft.EntityFrameworkCore;
     using ResumeApi.Model;
     using ResumeApi.Repositories.EntityFramework;
@@ -24,7 +23,7 @@
                 .Include(r => r.IndustryKnowledge)
                 .Include(r => r.CareerExperience)
                 .Include(r => r.EducationHistory)
-                .SingleOrDefaultAsync(r => r.UserName.Equals(userName, StringComparison.OrdinalIgnoreCase))
+                .SingleOrDefaultAsync(r => r.UserName == userName)
                 .ContinueWith(resume => resume.Result.ToMaybe());
         }
     }

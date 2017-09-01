@@ -5,8 +5,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
 
     public class Resume
-    {
-        [Key]
+    {        
         [Column("id")]
         public int Id { get; set; }
 
