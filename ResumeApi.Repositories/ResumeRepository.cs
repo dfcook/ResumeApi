@@ -6,8 +6,7 @@
     using ResumeApi.RepositoryInterfaces;
     using System.Threading.Tasks;
     using ResumeApi.Common;
-    using ResumeApi.Common.Exceptions;
-
+    
     public class ResumeRepository : IResumeRepository
     {
         private ResumeContext _context;
