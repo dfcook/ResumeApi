@@ -33,6 +33,7 @@ CREATE TABLE public.resume
     first_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
     last_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
     company_name character varying(100) COLLATE pg_catalog."default",
+    role character varying(100) COLLATE pg_catalog."default",
     summary character varying(1000) COLLATE pg_catalog."default",
     CONSTRAINT resume_pkey PRIMARY KEY (id)
 )
@@ -183,6 +184,40 @@ TABLESPACE pg_default;
 ALTER TABLE public.experience
     OWNER to postgres;
 
+-- Table: public.links
+
+-- DROP TABLE public.links;
+
+CREATE SEQUENCE public.link_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.link_id_seq
+    OWNER TO postgres;
+
+CREATE TABLE public.links
+(
+    id integer NOT NULL DEFAULT nextval('link_id_seq'::regclass),
+    resume_id integer NOT NULL,    
+    icon character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    url character varying(200) COLLATE pg_catalog."default" NOT NULL,    
+    CONSTRAINT link_pkey PRIMARY KEY (id),
+    CONSTRAINT fk_link FOREIGN KEY (resume_id)
+        REFERENCES public.resume (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.links
+    OWNER to postgres;
+
 -- data
 
 INSERT INTO public.resume(
@@ -252,3 +287,12 @@ INSERT INTO public.education(
 INSERT INTO public.education(
 	resume_id, from_year, to_year, establishment, qualifications)    
     VALUES (1, 1993, 1996, 'Kirkham Grammar School', 'Degree (2:1) in English Literature / Philosophy');
+
+INSERT INTO public.links (resume_id, icon, url)
+  VALUES (1, 'fa-envelope', 'mailto: dota_it@hotmail.co.uk');
+
+INSERT INTO public.links (resume_id, icon, url)
+  VALUES (1, 'fa-linkedin', 'https://uk.linkedin.com/in/daniel-cook-938529110');
+
+INSERT INTO public.links (resume_id, icon, url)
+  VALUES (1, 'fa-github', 'https://github.com/dfcook');

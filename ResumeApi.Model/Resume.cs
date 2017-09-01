@@ -25,8 +25,12 @@
         [MaxLength(100)]
         public string CompanyName { get; set; }
 
-        [Column("summary")]
+        [Column("role")]
         [MaxLength(100)]
+        public string Role { get; set; }
+
+        [Column("summary")]
+        [MaxLength(1000)]
         public string Summary { get; set; }
 
         public ICollection<KeySkill> KeySkills { get; set; }
@@ -36,5 +40,7 @@
         public ICollection<Education> EducationHistory { get; set; }
 
         public ICollection<Experience> CareerExperience { get; set; }
+
+        public ICollection<Link> Links { get; set; }
     }
 }
